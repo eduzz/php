@@ -1,4 +1,4 @@
-FROM php:7.1-cli
+FROM php:7.3-cli
 
 RUN set -x \
     && apt-get update \
@@ -11,7 +11,7 @@ RUN set -x \
     && apt-get update \
     && ACCEPT_EULA=Y apt-get install -y msodbcsql17 unixodbc-dev \
     && docker-php-ext-install -j$(nproc) soap pdo_dblib bcmath  \
-    && pecl install redis sqlsrv-5.2.0 pdo_sqlsrv-5.2.0 \
+    && pecl install redis sqlsrv-5.5.0preview pdo_sqlsrv-5.5.0preview \
     && docker-php-ext-enable redis sqlsrv pdo_sqlsrv \
     && rm -rf /var/lib/apt/lists/*
 
