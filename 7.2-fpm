@@ -13,7 +13,6 @@ RUN set -x \
     && docker-php-ext-install -j$(nproc) soap opcache pdo_dblib bcmath  \
     && pecl install redis sqlsrv-5.2.0 pdo_sqlsrv-5.2.0 \
     && docker-php-ext-enable redis sqlsrv pdo_sqlsrv \
-    && rm -rf /var/lib/apt/lists/* \
-    && php -m
+    && rm -rf /var/lib/apt/lists/*
 
 COPY freetds.conf /etc/freetds/freetds.conf
