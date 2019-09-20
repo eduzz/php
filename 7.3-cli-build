@@ -10,7 +10,7 @@ RUN set -x \
     && curl https://packages.microsoft.com/config/debian/9/prod.list | tee /etc/apt/sources.list.d/mssql-release.list \
     && apt-get update \
     && ACCEPT_EULA=Y apt-get install -y msodbcsql17 unixodbc-dev \
-    && docker-php-ext-install -j$(nproc) soap opcache pdo_dblib bcmath  \
+    && docker-php-ext-install -j$(nproc) soap opcache pdo_dblib bcmath sockets  \
     && pecl install xdebug-2.7.2 redis sqlsrv-5.6.1 pdo_sqlsrv-5.6.1 \
     && docker-php-ext-enable redis sqlsrv pdo_sqlsrv xdebug \
     && php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
