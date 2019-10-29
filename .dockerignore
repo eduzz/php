@@ -1,0 +1,5 @@
+*
+!freetds.conf
+!openssl.cnf
+!7*.sh
+!prestissimo.sh
