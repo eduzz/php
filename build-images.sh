@@ -1,6 +1,6 @@
 VERSIONS="7.3 7.4"
-VARIATIONS="cli fpm apache"
-TAGS="cli fpm apache cli-build"
+VARIATIONS="cli fpm"
+TAGS="cli fpm cli-build"
 
 for version in $VERSIONS; do
     for variation in $VARIATIONS; do
