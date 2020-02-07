@@ -1,8 +1,8 @@
-FROM php:7.2-apache
+FROM php:7.4-cli
 
-COPY 7.2.sh /tmp
+COPY 7.4.sh /tmp
 
-RUN chmod +x /tmp/7.2.sh && /tmp/7.2.sh
+RUN chmod +x /tmp/7.4.sh && /tmp/7.4.sh
 
 COPY freetds.conf /etc/freetds/freetds.conf
 COPY openssl.cnf /etc/ssl/openssl.cnf

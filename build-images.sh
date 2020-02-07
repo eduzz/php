@@ -1,4 +1,4 @@
-VERSIONS="7.1 7.2 7.3"
+VERSIONS="7.3 7.4"
 VARIATIONS="cli fpm apache"
 TAGS="cli fpm apache cli-build"
 
