@@ -8,9 +8,9 @@ set -x \
     && curl https://packages.microsoft.com/config/debian/10/prod.list | tee /etc/apt/sources.list.d/mssql-release.list \
     && apt-get update \
     && ACCEPT_EULA=Y apt-get install -y msodbcsql17 unixodbc-dev \
-    && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
+    && docker-php-ext-configure gd --with-freetype=/usr/include/ --with-jpeg=/usr/include/ \
     && docker-php-ext-install -j$(nproc) soap opcache pdo_dblib gd pdo_mysql bcmath sockets \
-    && pecl install amqp redis sqlsrv-8 pdo_sqlsrv-8 \
+    && pecl install amqp redis sqlsrv-5.8.0 pdo_sqlsrv-5.8.0 \
     && docker-php-ext-enable amqp redis sqlsrv pdo_sqlsrv \
     && rm -rf /var/lib/apt/lists/* \
     && mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
