@@ -1,8 +1,0 @@
-FROM php:7.1-cli
-
-COPY 7.1.sh /tmp
-
-RUN chmod +x /tmp/7.1.sh && /tmp/7.1.sh
-
-COPY freetds.conf /etc/freetds/freetds.conf
-COPY openssl.cnf /etc/ssl/openssl.cnf

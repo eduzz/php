@@ -10,12 +10,12 @@ done
 
 for version in $VERSIONS; do
     for tag in $TAGS; do
-        docker build -t "eduzz/php:$version-$tag" -f "$version-$tag" .
+        docker build -t "eduzz/php:$version-$tag-beta" -f "$version-$tag" .
     done
 done
 
 for version in $VERSIONS; do
     for tag in $TAGS; do
-        docker push "eduzz/php:$version-$tag"
+        docker push "eduzz/php:$version-$tag-beta"
     done
 done
