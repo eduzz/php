@@ -10,7 +10,7 @@ set -x \
     && ACCEPT_EULA=Y apt-get install -y msodbcsql17 unixodbc-dev \
     && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
     && docker-php-ext-configure zip \
-    && docker-php-ext-install -j$(nproc) zip soap opcache pdo_dblib gd pdo_mysql pdo_pgsql bcmath sockets \
+    && docker-php-ext-install -j$(nproc) pcntl intl libsodium uuid zip soap opcache pdo_dblib gd pdo_mysql pdo_pgsql bcmath sockets \
     && pecl install mongodb amqp redis sqlsrv-5.8.1 pdo_sqlsrv-5.8.1 \
     && docker-php-ext-enable mongodb amqp redis sqlsrv pdo_sqlsrv \
     && rm -rf /var/lib/apt/lists/* \
