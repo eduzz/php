@@ -1,16 +1,11 @@
 VERSIONS="8.0"
-VARIATIONS="cli-buster fpm-buster"
 TAGS="cli fpm"
 
 for version in $VERSIONS; do
-    for variation in $VARIATIONS; do
-        docker pull "php:$version-$variation"
-    done
-done
-
-for version in $VERSIONS; do
     for tag in $TAGS; do
-        docker build -t "eduzz/php:$version-$tag" -f $version .
+        IMAGE_TAG="$version-$tag-buster"
+        docker pull "php:$IMAGE_TAG"
+        docker build -t "eduzz/php:$version-$tag" -f $version --build-arg PHP_IMAGE_VERSION="$IMAGE_TAG" .
     done
 done
 
