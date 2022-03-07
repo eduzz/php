@@ -14,8 +14,8 @@ for version in $VERSIONS; do
     done
 done
 
-# for version in $VERSIONS; do
-#     for tag in $TAGS; do
-#         docker push "eduzz/php:$version-$tag"
-#     done
-# done
+for version in $VERSIONS; do
+    for tag in $TAGS; do
+        docker push "eduzz/php:$version-$tag"
+    done
+done
