@@ -1,0 +1,8 @@
+FROM php:8.1-cli
+
+COPY 8.1.sh /tmp
+
+RUN chmod +x /tmp/8.1.sh && /tmp/8.1.sh
+
+COPY freetds.conf /etc/freetds/freetds.conf
+COPY openssl.cnf /etc/ssl/openssl.cnf
