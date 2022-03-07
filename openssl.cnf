@@ -1,3 +1,4 @@
+ openssl_conf = default_conf
 #
 # OpenSSL example configuration file.
 # This is mostly being used for generation of certificate requests.
@@ -14,9 +15,6 @@ HOME			= .
 # Extra OBJECT IDENTIFIER info:
 #oid_file		= $ENV::HOME/.oid
 oid_section		= new_oids
-
-# System default
-openssl_conf = default_conf
 
 # To use this configuration file with the "-extfile" option of the
 # "openssl x509" utility, name here the section containing the
@@ -358,5 +356,5 @@ ssl_conf = ssl_sect
 system_default = system_default_sect
 
 [system_default_sect]
-MinProtocol = TLSv1.0
+MinProtocol = TLSv1
 CipherString = DEFAULT@SECLEVEL=1

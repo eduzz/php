@@ -1,0 +1,10 @@
+FROM php:8.1-fpm
+
+COPY 8.1.sh /tmp
+
+RUN chmod +x /tmp/8.1.sh \
+    && /tmp/8.1.sh \
+    && echo "\nCPTimeout=300\n\n[ODBC]\nPooling=Yes" >> /etc/odbcinst.ini
+
+COPY freetds.conf /etc/freetds/freetds.conf
+COPY openssl.cnf /etc/ssl/openssl.cnf
