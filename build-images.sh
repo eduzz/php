@@ -1,4 +1,4 @@
-VERSIONS="7.4 7.3 7.2"
+VERSIONS="7.4 8.1"
 VARIATIONS="cli fpm"
 TAGS="cli fpm cli-build"
 
