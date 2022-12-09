@@ -3,5 +3,4 @@
 !openssl.cnf
 !7*.sh
 !8*.sh
-!prestissimo.sh
-!composer2.sh
+!composer.sh

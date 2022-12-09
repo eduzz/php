@@ -11,7 +11,7 @@ set -x \
     && docker-php-ext-configure gd --with-freetype=/usr/include/ --with-jpeg=/usr/include/ \
     && docker-php-ext-configure zip \
     && docker-php-ext-install -j$(nproc) pcntl intl zip soap opcache pdo_dblib gd pdo_mysql pdo_pgsql bcmath sockets \
-    && pecl install libsodium mongodb amqp redis uuid sqlsrv-5.9.0 pdo_sqlsrv-5.9.0 \
+    && pecl install libsodium mongodb amqp redis uuid sqlsrv-5.10.1 pdo_sqlsrv-5.10.1 \
     && docker-php-ext-enable mongodb amqp redis sqlsrv pdo_sqlsrv \
     && rm -rf /var/lib/apt/lists/* \
     && mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini" \

@@ -1,10 +1,10 @@
-VERSIONS="7.4 8.1"
+VERSIONS="8.1"
 VARIATIONS="cli fpm"
 TAGS="cli fpm cli-build"
 
 for version in $VERSIONS; do
     for variation in $VARIATIONS; do
-        docker pull "php:$version-$variation"
+        docker pull "php:$version-$variation-buster"
     done
 done
 

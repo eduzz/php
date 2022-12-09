@@ -1,8 +1,8 @@
 FROM php:7.2-cli
 
-COPY 7.2.sh prestissimo.sh /tmp/
+COPY 7.2.sh composer.sh /tmp/
 
-RUN chmod +x /tmp/*.sh && /tmp/7.2.sh && /tmp/prestissimo.sh
+RUN chmod +x /tmp/*.sh && /tmp/7.2.sh && /tmp/composer.sh
 
 COPY freetds.conf /etc/freetds/freetds.conf
 COPY openssl.cnf /etc/ssl/openssl.cnf

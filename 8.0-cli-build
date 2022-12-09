@@ -1,0 +1,10 @@
+FROM php:8.0-cli-buster
+
+ENV XDEBUG_MODE=coverage
+
+COPY 8.0.sh composer.sh /tmp/
+
+RUN chmod +x /tmp/*.sh && /tmp/8.0.sh && /tmp/composer.sh
+
+COPY freetds.conf /etc/freetds/freetds.conf
+COPY openssl.cnf /etc/ssl/openssl.cnf

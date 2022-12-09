@@ -1,8 +1,10 @@
 FROM php:7.4-cli-buster
 
-COPY 7.4.sh prestissimo.sh /tmp/
+ENV XDEBUG_MODE=coverage
 
-RUN chmod +x /tmp/*.sh && /tmp/7.4.sh && /tmp/prestissimo.sh
+COPY 7.4.sh composer.sh /tmp/
+
+RUN chmod +x /tmp/*.sh && /tmp/7.4.sh && /tmp/composer.sh
 
 COPY freetds.conf /etc/freetds/freetds.conf
 COPY openssl.cnf /etc/ssl/openssl.cnf

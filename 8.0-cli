@@ -1,0 +1,8 @@
+FROM php:8.0-cli-buster
+
+COPY 8.0.sh /tmp
+
+RUN chmod +x /tmp/8.0.sh && /tmp/8.0.sh
+
+COPY freetds.conf /etc/freetds/freetds.conf
+COPY openssl.cnf /etc/ssl/openssl.cnf
