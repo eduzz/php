@@ -1,8 +1,8 @@
-FROM php:8.0-cli-buster
+FROM php:8.3-cli-bookworm
 
-COPY 8.0.sh /tmp
+COPY 8.3.sh /tmp
 
-RUN chmod +x /tmp/8.0.sh && /tmp/8.0.sh
+RUN chmod +x /tmp/8.3.sh && /tmp/8.3.sh
 
 COPY freetds.conf /etc/freetds/freetds.conf
 COPY openssl.cnf /etc/ssl/openssl.cnf
