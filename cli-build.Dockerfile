@@ -1,7 +1,8 @@
-ARG PHP_VERSION=8.4
+ARG PHP_VERSION=8.5
 
 FROM php:${PHP_VERSION}-cli-bookworm
 
+ENV PHP_VERSION=${PHP_VERSION}
 ENV XDEBUG_MODE=coverage
 
 COPY packages.sh composer.sh /tmp/

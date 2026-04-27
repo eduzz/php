@@ -1,6 +1,6 @@
 VERSIONS="8.3"
 VARIATIONS="cli fpm"
-TAGS="cli fpm cli-build"
+TAGS="cli-build cli fpm"
 
 for version in $VERSIONS; do
     for variation in $VARIATIONS; do
@@ -10,7 +10,7 @@ done
 
 for version in $VERSIONS; do
     for tag in $TAGS; do
-        docker build --build-arg PHP_VERSION=$version --progress plain -t "eduzz/php:$version-$tag-tmp" -f "$tag.Dockerfile" .
+        docker build --build-arg PHP_VERSION=$version --progress plain -t "eduzz/php:$version-$tag" -f "$tag.Dockerfile" .
     done
 done
 

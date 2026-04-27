@@ -8,7 +8,8 @@ set -x \
     && curl https://packages.microsoft.com/config/debian/12/prod.list | tee /etc/apt/sources.list.d/mssql-release.list \
     && apt-get update \
     && ACCEPT_EULA=Y apt-get install -y msodbcsql18 unixodbc-dev libltdl-dev libodbc1 \
-    && docker-php-ext-install -j$(nproc) pcntl intl zip soap opcache pdo_dblib gd pdo_mysql pdo_pgsql bcmath sockets \
+    && if [ "$(printf '%s\n' "$PHP_VERSION" "8.5" | sort -V | head -n1)" != "8.5" ]; then docker-php-ext-install -j$(nproc) opcache; fi \
+    && docker-php-ext-install -j$(nproc) pcntl intl zip pdo_dblib gd pdo_mysql pdo_pgsql bcmath sockets soap \
     && pecl channel-update pecl.php.net \
     && pecl install libsodium mongodb amqp-2.2.0 redis apcu uuid sqlsrv-5.13.0 pdo_sqlsrv-5.13.0 \
     && docker-php-ext-enable mongodb amqp redis sqlsrv apcu pdo_sqlsrv \
